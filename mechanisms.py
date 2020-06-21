@@ -2,6 +2,15 @@
 
 
 import numpy as np
+import pydp as dp
+
+def simple_max(queries, epsilon):
+    #INCORRECT litterally no dp
+    return max(queries)
+
+def dp_max(queries, epsilon):
+    x = dp.Max(epsilon, 0, 10)
+    return x.result(queries,epsilon)
 
 def noisy_max_v1a(queries, epsilon):
     # find the largest noisy element and return its index

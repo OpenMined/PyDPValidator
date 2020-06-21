@@ -4,8 +4,8 @@ import scipy.io as sio
 from scipy.special import comb
 
 
-dic_list_cheb_2z_1 = np.load('dic_list_cheb_2z_1.npy')
-dic_list_cheb_z = np.load('dic_list_cheb_z.npy')
+dic_list_cheb_2z_1 = np.load('dic_list_cheb_2z_1.npy',allow_pickle=True)
+dic_list_cheb_z = np.load('dic_list_cheb_z.npy', allow_pickle=True)
 
 
 coeff_uk = sio.loadmat('coeff_uk.mat')['coeff2']
