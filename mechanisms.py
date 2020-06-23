@@ -4,6 +4,10 @@
 import numpy as np
 import pydp as dp
 
+def nothing(queries, epsilon):
+    #dummy for testing
+    return 0
+
 def simple_max(queries, epsilon):
     #INCORRECT litterally no dp
     return max(queries)
