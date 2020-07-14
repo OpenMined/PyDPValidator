@@ -1,6 +1,6 @@
 # PyDPValidator 
 
-This repo adapts code from https://github.com/xiyangl3/adp-estimator/ to apply the techniques in that repo's [accompanying paper, Minimax Optimal Estimation of Approximate Differential Privacy on Neighboring Databases] (https://arxiv.org/abs/1905.10335) to examining [PyDP] (https://github.com/OpenMined/PyDP).
+This repo adapts code from https://github.com/xiyangl3/adp-estimator/ to apply the techniques in that repo's [accompanying paper, Minimax Optimal Estimation of Approximate Differential Privacy on Neighboring Databases](https://arxiv.org/abs/1905.10335) to examining [PyDP](https://github.com/OpenMined/PyDP).
 ## Dependencies
 
 * To run the experiments, you need to have the following libraries installed:
