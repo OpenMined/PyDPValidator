@@ -3,6 +3,8 @@
 
 import numpy as np
 import pydp as dp
+from diffprivlib import tools as ibm
+import warnings 
 
 def nothing(queries, epsilon):
     #dummy for testing
@@ -12,8 +14,17 @@ def simple_max(queries, epsilon):
     #INCORRECT litterally no dp
     return max(queries)
 
+def dp_mean(queries, epsilon):
+    #PyDP mean
+    x = dp.BoundedMean(epsilon,-15,15)
+    return x.result(queries);
+
+def simple_mean(queries, epsilon):
+    #INCORRECT litterally no dp
+    return mean(queries)
+
 def dp_max(queries, epsilon):
-    x = dp.Max(epsilon, 0, 10)
+    x = dp.Max(epsilon)
     return x.result(queries,epsilon)
 
 def noisy_max_v1a(queries, epsilon):
@@ -50,6 +61,22 @@ def histogram(queries, epsilon):
     noisy_array = np.asarray(queries, dtype=np.float32) + np.random.laplace(scale=1.0 / epsilon, size=len(queries))
     # return noisy_array
     return noisy_array[0]
+
+def histogram_ibm(queries, epsilon, start, stop):
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        #print("q")
+        #print(queries)
+        #print("e")
+        #print(epsilon)
+        #print("range")
+        #print(start,stop)
+        hist, bins = ibm.histogram(queries, epsilon = epsilon, bins =100, range =(-1,3))
+        #print("hist")
+        #print(hist)
+        #print("bins ibm")
+        #print(bins)
+        return hist
 
 
 def laplace_mechanism(queries, epsilon):
